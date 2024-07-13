@@ -9,6 +9,7 @@ const Input = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // for the deplay the call if user is typing
     const delayDebounceFn = setTimeout(() => {
       if (query) {
         dispatch(setSearchQuery(query));
@@ -20,29 +21,29 @@ const Input = () => {
   }, [query, dispatch]);
 
   return (
-    <div style={{display:'flex',flex:1,justifyContent:'center'}}>
-  <Paper
-      component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
-    >
-      
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="Search for users..."
-        inputProps={{ 'aria-label': 'Search for users...' }}
-        value={query}
-        
+    <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+      <Paper
+        component="form"
+        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+      >
 
-    onChange={(e) => setQuery(e.target.value)}
-      />
-      <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-     
-    </Paper>
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="Search for users..."
+          inputProps={{ 'aria-label': 'Search for users...' }}
+          value={query}
+
+
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+          <SearchIcon />
+        </IconButton>
+
+      </Paper>
 
     </div>
-    
+
   );
 };
 
