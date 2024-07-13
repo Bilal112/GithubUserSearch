@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import Input from './Components/Input/Input';
+import List from './Components/List/List';
+import UserModal from './Components/Modal/Modal';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>GitHub User Search</h1>
+      <Input />
+      <List />
+      <UserModal />
     </div>
   );
-}
+};
 
 export default App;
